@@ -1,0 +1,10 @@
+﻿const dgram=require('dgram');
+const s=dgram.createSocket('udp4');
+const msg=Buffer.from(JSON.stringify({id:0,method:7000}));
+let hay=false;
+s.on('message',(m,rinfo)=>{ hay=true;
+  try{const j=JSON.parse(m.toString());const r=j.result||{};
+    console.log("IMPRESORA en",rinfo.address,"|",r.machine_model||"?","| sn:",r.sn||"?","| lan_status:",r.lan_status,"| token_status:",r.token_status);
+  }catch(e){console.log("de",rinfo.address,":",m.toString().slice(0,150));}});
+s.bind(()=>{s.setBroadcast(true);s.send(msg,0,msg.length,52700,'255.255.255.255');});
+setTimeout(()=>{ if(!hay) console.log("sin respuesta UDP"); s.close(); },6000);
