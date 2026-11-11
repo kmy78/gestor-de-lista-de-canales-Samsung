@@ -1,7 +1,7 @@
 # Gestor de canales IP para Samsung
 
 Herramienta para añadir canales de streaming (HLS) a la lista del televisor, sin tocar la TDT.
-
+Modelo Probado Samsung UE49MU7005
 ## Cómo se abre
 
 Doble clic en **`Iniciar gestor.bat`**. No hace falta instalar nada: usa el Python que ya tienes
