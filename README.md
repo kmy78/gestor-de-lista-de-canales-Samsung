@@ -1,6 +1,7 @@
 # Gestor de canales IP para Samsung
 
 Herramienta para añadir canales de streaming (HLS) a la lista del televisor, sin tocar la TDT.
+Cada cierto tiempo que desconozco Samsung tv plus actualiza la lista canales y te elimina tus canales
 
 # Modelo Probado 
 
